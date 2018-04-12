@@ -13,6 +13,13 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <title>TampereJS - Largest web development meetup in Tampere</title>
+  <style>
+  .display-5 {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+</style>
 </head>
 
 <body class="bg-light">
@@ -21,7 +28,7 @@
       <img class="display-block mb-4" src="img/logo.png" style="width: 150px" />
       <h1 class="display-3 d-none d-md-block"><b>TampereJS</b></h1>
       <h1 class="display-4 d-md-none"><b>TampereJS</b></h1>
-      <p class="display-4 text-muted" style="font-size: 2rem;">
+      <p class="display-5 text-muted">
         Largest web development meetup in Tampere
       </p>
       <a class="btn btn-lg btn-outline-primary mt-3" href="https://twitter.com/tamperejs" target="_blank"><i class="fab fa-twitter mr-2"></i> Follow us on Twitter</a>
@@ -34,7 +41,7 @@
       <h2 class="display-4">Get involved!</h2>
       <p>
         TampereJS is a community of web developers and a regular meetup revolving around JavaScript and web development in general. As the name implies, it takes place in Tampere, Finland.
-        <strong>It is organized on first Thursday of every month</strong>, with different talks, sponsor and location every time. So, if you are a web developer (or web-curious) TampereJS
+        <strong>It is organized on first Thursday of every month</strong>, with different talks, sponsor and location every time. So, if you are a web developer (or just web-curious) TampereJS
         is the place to be!
       </p>
       <p>
@@ -69,6 +76,53 @@
         <strong>Bonus:</strong> In the beginning of the event, you can do short company introduction and get the first talk
       </p>
       <a class="btn btn-lg btn-outline-primary mt-3" href="https://twitter.com/tamperejs" target="_blank"><i class="fab fa-twitter mr-2"></i> Let us know via Twitter</a>
+      <button type="button" class="btn btn-lg btn-link mt-3" data-toggle="modal" data-target="#sponsor-guidelines">Sponsor guidelines</button>
+    </div>
+
+    <!-- Sponsor guidelines modal -->
+    <div class="modal fade" id="sponsor-guidelines" tabindex="-1" role="dialog" aria-labelledby="TampereJS Sponsor Guidelines" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title display-5" id="exampleModalLongTitle">TampereJS sponsor guidelines</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              We thank you for your contribution to the community <i class="fa fa-heart"></i> Here are few tips and guidelines to help you, as a sponsor, to get most out of TampereJS.
+            </p>
+            <h5 class="display-5">Before the event</h5>
+            <ul>
+              <li>Send organizers the address to the location (preferrably in city centrum) and number of attendees your space can handle (minimum of 20 + organizers)</li>
+              <li>Preferrably have a JavaScript related talk ready</li>
+              <li>Tweet, Facebook, Snapchat like a MF (remember to mention TampereJS so people know it's a community event)</li>
+            </ul>
+            <h5 class="display-5">Just before/during the event</h5>
+            <ul>
+              <li>Have TampereJS signs leading from the street address all the way to the actual location where talks are held</li>
+              <li>Have someones phone number on the first sign in case someone doesn't find their way or doors are locked</li>
+              <li>Finnish are pretty quiet so have some music in the background while waiting for the talks to begin and after the talks</li>
+              <li>People start appearing 30 minutes before the event so be ready at that point (signs, snacks, drinks)</li>
+              <li>Have drinks and snacks available at the beginning so people can eat & drink while they wait</li>
+              <li>Have some vegetarian and non-alcoholic options</li>
+              <li>First talks usually start 15-25 minutes past the starting time, once everyone has arrived</li>
+              <li>You can have short company presentation (max. 5 minutes) at the beginning and you get the first talk</li>
+              <li>Remember to tweet @TampereJS #TampereJS so we can retweet you</li>
+              <li>When the talks are over, there will be networking/mingling for hour/few hours so prepare for that</li>
+              <li>If you have a favorite bar nearby, you can recommend that as a "continuation place" after leaving the premises (usually bunch of people will have few drinks after the meetup)</li>
+            </ul>
+            <h5 class="display-5">After the event</h5>
+            <ul>
+              <li>Post the presentation decks or link to the community in Facebook & Twitter</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <hr />
@@ -98,6 +152,25 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-117434285-1');
+  </script>
+  <script>
+    $(document).ready(function() {
+      var $elSponsorGuidelines = $('#sponsor-guidelines');
+      var sponsorGuidelinesHash = '#sponsor-guidelines'
+
+      // Add/remove hash for easier sharing
+      $elSponsorGuidelines.on('shown.bs.modal', function (e) {
+        document.location.hash = sponsorGuidelinesHash;
+      });
+      $elSponsorGuidelines.on('hidden.bs.modal', function (e) {
+        document.location.hash = '';
+      });
+
+      // If hash is there, show the modal
+      if(document.location.hash === sponsorGuidelinesHash) {
+        $elSponsorGuidelines.modal('show')
+      }
+    });
   </script>
 </body>
 
